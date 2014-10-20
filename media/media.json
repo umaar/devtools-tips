@@ -1,0 +1,25 @@
+[{
+		"panel": "elements",
+		"title": "Add styles",
+		"src": "elements/add-styles.mp4",
+		"description": "Add some new styles",
+		"tags": ["style"]
+	}, {
+		"panel": "elements",
+		"title": "Eyedropper tool",
+		"src": "elements/eyedropper.mp4",
+		"description": "Get colours from a web page using the eyedropper tool.",
+		"tags": ["style", "colour"]
+	}, {
+		"panel": "network",
+		"title": "Add columns",
+		"src": "elements/add-columns.mp4",
+		"description": "Add or remove columns from the Network Panel.",
+		"tags": ["column"]
+	}, {
+		"panel": "network",
+		"title": "Copy as cURL",
+		"src": "elements/copy-as-curl.mp4",
+		"description": "Generate a cURL-friendly command from a resource.",
+		"tags": ["curl"]
+}]
