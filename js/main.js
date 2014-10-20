@@ -1,11 +1,16 @@
 $(function() {
 
-	$.getJSON( "media/media.json", function(r) {
-		console.log( "success" , r);
-	}).done(function() {
-		console.log( "second success" );
-	}).fail(function(e) {
-		console.log( "error" , e);
-	});
+	function getMedia() {
+		return $.getJSON( "media/media.json");
+	}
+
+	function render(data) {
+		$.get('tip.mustache', function(template) {
+			var rendered = Mustache.render(template, {tips: data});
+			$('.tips').append(rendered);
+		});
+	}
+
+	getMedia().done(render);
 
 });

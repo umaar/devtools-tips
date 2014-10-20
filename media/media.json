@@ -13,13 +13,13 @@
 	}, {
 		"panel": "network",
 		"title": "Add columns",
-		"src": "elements/add-columns.mp4",
+		"src": "network/add-columns.mp4",
 		"description": "Add or remove columns from the Network Panel.",
 		"tags": ["column"]
 	}, {
 		"panel": "network",
 		"title": "Copy as cURL",
-		"src": "elements/copy-as-curl.mp4",
+		"src": "network/copy-as-curl.mp4",
 		"description": "Generate a cURL-friendly command from a resource.",
 		"tags": ["curl"]
 }]
