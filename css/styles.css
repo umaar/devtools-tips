@@ -1,5 +1,35 @@
 
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 3%;
+	background: #FAFAFA;
+}
 
 .container {
+	max-width: 960px;
+	margin: 0 auto;
+}
 
+.tips {
+
+}
+
+.tips-tip {
+	list-style-type: none;
+	padding: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	background: #fff;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.tips-heading {
+	font-size: 27px;
+	margin: 0 0 20px;
+}
+
+.tips-video {
+	border: 1px solid rgba(0,0,0,0.8);
 }
