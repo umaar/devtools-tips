@@ -2,7 +2,7 @@
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: 3%;
-	background: #FAFAFA;
+	background: #FDFDFD;
 }
 
 .container {
@@ -11,13 +11,13 @@ body {
 }
 
 .tips {
-
+	padding: 0;
 }
 
 .tips-tip {
 	list-style-type: none;
 	padding: 20px;
-	border: 1px solid rgba(0, 0, 0, 0.08);
+	border: 1px solid rgba(0, 0, 0, 0.06);
 	background: #fff;
 	border-radius: 4px;
 	overflow: hidden;
@@ -32,4 +32,34 @@ body {
 
 .tips-video {
 	border: 1px solid rgba(0,0,0,0.8);
+	max-width: 78%;
+}
+
+@media screen and (max-width: 780px) {
+	body {
+		margin: 1%;
+	}
+
+	.tips-video {
+		max-width: 90%;
+	}
+}
+
+@media screen and (max-width: 680px) {
+	body {
+		margin: 20px;
+	}
+
+	.tips-heading {
+		font-size: 19px;
+		margin: 7px 0;
+	}
+
+	.tips-tip {
+		padding: 5px;
+	}
+
+	.tips-video {
+		max-width: 95%;
+	}
 }
