@@ -82,7 +82,7 @@ $(function() {
 
 	function formatData(data) {
 		var keyed = data.map(function(tip) {
-			tip['key'] = tip.src.replace('media', '').replace('/', '-').replace('.mp4', '');
+			tip['key'] = tip.src.replace('/', '-').replace('.mp4', '');
 			return tip;
 		});
 		return group(keyed);
@@ -92,17 +92,22 @@ $(function() {
 		return $.getJSON( "media/media.json");
 	}
 
+	function getMetadata() {
+		return $.getJSON( "media/metadata.json");
+	}
+
 	function getTemplate(data) {
 		return $.get('tip.mustache');
 	}
 
 	function render(data, template) {
-		var rendered = Mustache.render(template, {data: formatData(data)});
+		var rendered = Mustache.render(template, {data: formatData(data.tips)});
 		$('.tips').append(rendered);
+		console.log(data.metadata);
 	}
 
-	$.when(getMedia(), getTemplate()).done(function(data, template) {
-		render(data[0], template[0]);
+	$.when(getMedia(), getTemplate(), getMetadata()).done(function(data, template, metadata) {
+		render({tips: data[0], metadata: metadata[0]}, template[0]);
 		tipsReady();
 	});
 });
