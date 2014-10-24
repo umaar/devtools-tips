@@ -30,6 +30,10 @@ $(function() {
 		});
 	}
 
+	function toggleLabels() {
+		$('.tips-heading span').toggle();
+	}
+
 	function bindControls() {
 		$('.settings-options-play-all').on('click', function() {
 			toggleVideos('play');
@@ -38,6 +42,8 @@ $(function() {
 		$('.settings-options-stop-all').on('click', function() {
 			toggleVideos('stop');
 		});
+
+		$('.settings-options-toggle-labels').on('click', toggleLabels);
 	}
 
 	function scrollToTip() {

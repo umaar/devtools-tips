@@ -43,8 +43,15 @@ body {
 }
 
 .tips-heading {
-	font-size: 24px;
 	margin: 0;
+}
+
+.tips-heading span {
+	font-size: 14px;
+	font-weight: normal;
+	color: rgba(111, 104, 104, 0.85);
+	letter-spacing: 1px;
+	margin-right: 20px;
 }
 
 /* Highlight on target */
@@ -56,8 +63,9 @@ body {
 }
 
 .tips-heading a {
+	font-size: 24px;
 	padding: 15px 0;
-	display: block;
+	display: inline-block;
 }
 
 .tips-heading a:target {
@@ -86,7 +94,7 @@ body {
 
 	.tips-heading a {
 		font-size: 17px;
-		margin: padding: 7px;
+		padding: 7px;
 	}
 
 	.tips-tip {
