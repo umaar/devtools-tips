@@ -1,9 +1,11 @@
-{{#tips}}
-	<li class="tips-tip" data-panel="{{panel}}" data-tags="{{tags}}">
-		<h3 class="tips-heading">{{title}}</h3>
-		<video class="tips-video" controls autoplay loop>
-			<source src="media/{{src}}" type="video/mp4"></source>
-		</video>
-		<p>{{description}}</p>
-	</li>
-{{/tips}}
+{{#data}}
+	{{#tips}}
+		<li class="tips-tip" data-panel="{{panel}}" data-tags="{{tags}}">
+			<h3 class="tips-heading">{{title}}</h3>
+			<video class="tips-video" controls autoplay loop>
+				<source src="media/{{src}}" type="video/mp4"></source>
+			</video>
+			<p>{{description}}</p>
+		</li>
+	{{/tips}}
+{{/data}}
