@@ -6,8 +6,15 @@ body {
 }
 
 .container {
-	max-width: 960px;
+	max-width: 95%;
 	margin: 0 auto;
+}
+
+.extra {
+	border: 1px solid grey;
+	padding: 10px;
+	width: 18%;
+	position: fixed;
 }
 
 .heading p {
@@ -20,19 +27,12 @@ body {
 	cursor: pointer;
 }
 
-.news-item details[open] summary {
-	font-style: italic;
-}
-
-.news-item details[open] time,
-.news-item time:hover {
-	border: 1px solid #E8B8A0;
-	background: rgba(240, 224, 216, 0.55);
-}
-
 
 .tips {
 	padding: 0;
+	width: 77%;
+	float: left;
+	margin: 0 0 0 24%;
 }
 
 .tips-tip {
