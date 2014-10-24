@@ -38,13 +38,30 @@ body {
 	background: #fff;
 	border-radius: 4px;
 	overflow: hidden;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	text-align: center;
 }
 
 .tips-heading {
 	font-size: 24px;
-	margin: 0 0 20px;
+	margin: 0;
+}
+
+/* Highlight on target */
+
+@-webkit-keyframes target {
+	from { background:#ffffd3; }
+	90% { background:#ffffd3; }
+	to { background:#ffffff; }
+}
+
+.tips-heading a {
+	padding: 15px 0;
+	display: block;
+}
+
+.tips-heading a:target {
+	-webkit-animation:target 1s linear;
 }
 
 .tips-video {
@@ -67,9 +84,9 @@ body {
 		margin: 20px;
 	}
 
-	.tips-heading {
+	.tips-heading a {
 		font-size: 17px;
-		margin: 7px 0;
+		margin: padding: 7px;
 	}
 
 	.tips-tip {

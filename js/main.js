@@ -16,15 +16,17 @@ $(function() {
 	var videoPlayback = {
 		stop: function(vid) {
 			vid.currentTime = 0;
+			vid.pause();
 		},
 		play: function(vid) {
+			vid.currentTime = 0;
 			vid.play();
 		}
 	};
 
 	function toggleVideos(state) {
 		videos.each(function() {
-			videoPlayback[state]();
+			videoPlayback[state]($(this)[0]);
 		});
 	}
 
@@ -38,9 +40,19 @@ $(function() {
 		});
 	}
 
+	function scrollToTip() {
+		var tip = $('.tips-heading [href='+location.hash+']');
+		if (tip.length) {
+			$('html, body').animate({
+			    scrollTop: tip.offset().top
+			}, 100);
+		}
+	}
+
 	function tipsReady(data) {
 		videos = $('video');
 		bindControls();
+		scrollToTip();
 	}
 
 	function group(data) {
@@ -61,8 +73,12 @@ $(function() {
 		return grouped;
 	}
 
-	function filterData(data) {
-		return group(data);
+	function formatData(data) {
+		var keyed = data.map(function(tip) {
+			tip['key'] = tip.src.replace('media', '').replace('/', '-').replace('.mp4', '');
+			return tip;
+		});
+		return group(keyed);
 	}
 
 	function getMedia() {
@@ -74,7 +90,7 @@ $(function() {
 	}
 
 	function render(data, template) {
-		var rendered = Mustache.render(template, {data: filterData(data)});
+		var rendered = Mustache.render(template, {data: formatData(data)});
 		$('.tips').append(rendered);
 	}
 
