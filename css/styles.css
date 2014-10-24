@@ -10,6 +10,23 @@ body {
 	margin: 0 auto;
 }
 
+.settings summary {
+	margin-bottom: 12px;
+	outline: none;
+	cursor: pointer;
+}
+
+.news-item details[open] summary {
+	font-style: italic;
+}
+
+.news-item details[open] time,
+.news-item time:hover {
+	border: 1px solid #E8B8A0;
+	background: rgba(240, 224, 216, 0.55);
+}
+
+
 .tips {
 	padding: 0;
 }
@@ -26,7 +43,7 @@ body {
 }
 
 .tips-heading {
-	font-size: 27px;
+	font-size: 24px;
 	margin: 0 0 20px;
 }
 

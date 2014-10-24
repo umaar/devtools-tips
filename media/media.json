@@ -35,5 +35,11 @@
 		"src": "sources/editing-values.mp4",
 		"description": "Edit values and see the updates in real time.",
 		"tags": ["sources"]
+	}, {
+		"panel": "network",
+		"title": "View cookies per resource",
+		"src": "sources/editing-values.mp4",
+		"description": "View the cookies which are sent with a HTTP request.",
+		"tags": ["network"]
 	}
 ]
