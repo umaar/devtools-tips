@@ -51,7 +51,7 @@ body {
 }
 
 .tips-heading span {
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: normal;
 	color: rgba(111, 104, 104, 0.85);
 	letter-spacing: 1px;
@@ -78,7 +78,8 @@ body {
 
 .tips-video {
 	border: 1px solid rgba(0,0,0,0.8);
-	max-width: 75%;
+	max-width: 600px;
+	width: 80%;
 }
 
 @media screen and (max-width: 780px) {
@@ -88,6 +89,18 @@ body {
 
 	.tips-video {
 		max-width: 90%;
+	}
+
+	.extra {
+		position: static;
+		width: auto;
+		display: block;
+	}
+
+	.tips {
+		float: none;
+		margin: 20px 0;
+		width: auto;
 	}
 }
 
