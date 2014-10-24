@@ -103,7 +103,7 @@ $(function() {
 	function render(data, template) {
 		var rendered = Mustache.render(template, {data: formatData(data.tips)});
 		$('.tips').append(rendered);
-		console.log(data.metadata);
+		$('.heading p').find('span').html(data.metadata.totalSize).end().fadeIn();;
 	}
 
 	$.when(getMedia(), getTemplate(), getMetadata()).done(function(data, template, metadata) {

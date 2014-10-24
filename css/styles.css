@@ -10,6 +10,10 @@ body {
 	margin: 0 auto;
 }
 
+.heading p {
+	display: none;
+}
+
 .settings summary {
 	margin-bottom: 12px;
 	outline: none;
@@ -74,7 +78,7 @@ body {
 
 .tips-video {
 	border: 1px solid rgba(0,0,0,0.8);
-	max-width: 78%;
+	max-width: 75%;
 }
 
 @media screen and (max-width: 780px) {
