@@ -41,8 +41,9 @@ $(function() {
 	}
 
 	function scrollToTip() {
-		var tip = $('.tips-heading [href='+location.hash+']');
-		if (tip.length) {
+		var hash = location.hash;
+		if (hash.length) {
+			var tip = $('.tips-heading [href='+hash+']');
 			$('html, body').animate({
 			    scrollTop: tip.offset().top
 			}, 100);
