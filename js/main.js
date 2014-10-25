@@ -11,6 +11,12 @@ $(function() {
 		"console"
 	];
 
+	function animate(elm) {
+		$('html, body').animate({
+		    scrollTop: elm.offset().top
+		}, 100);
+	}
+
 	var videos;
 
 	var videoPlayback = {
@@ -51,9 +57,7 @@ $(function() {
 		if (hash.length) {
 			var tip = $('.tips-heading [href='+hash+']');
 			if (tip.length) {
-				$('html, body').animate({
-				    scrollTop: tip.offset().top
-				}, 100);
+				animate(tip);
 			}
 		}
 	}
@@ -70,6 +74,19 @@ $(function() {
 		}
 	}
 
+	function bindPanelLinks() {
+		var currentInfo = $('.current-info ul');
+		var links = currentInfo.find('a');
+		links.on('click', function(e) {
+			e.preventDefault();
+			var panel = $(this).data('panel');
+			var tip = $('.tips-tip[data-panel='+ panel +']:first');
+			if (tip.length) {
+				animate(tip);
+			}
+		});
+	}
+
 	function initCurrentInfo() {
 		var currentInfo = $('.current-info ul');
 		var panelInfo;
@@ -80,6 +97,7 @@ $(function() {
 		updateCurrentPanel();
 		// TODO: Throttle + Requestanimframe
 		$(window).on('scroll', updateCurrentPanel);
+		bindPanelLinks();
 	}
 
 	function tipsReady(data) {
