@@ -27,6 +27,13 @@ body {
 	cursor: pointer;
 }
 
+.current-info {
+	
+}
+
+.current-panel {
+	font-weight: bold;
+}
 
 .tips {
 	padding: 0;
@@ -44,6 +51,7 @@ body {
 	overflow: hidden;
 	margin-bottom: 20px;
 	text-align: center;
+	box-shadow: 3px 3px 4px #ccc;
 }
 
 .tips-heading {

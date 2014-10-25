@@ -20,7 +20,7 @@ $(function() {
 		},
 		play: function(vid) {
 			vid.currentTime = 0;
-			vid.play();
+			vid.load();
 		}
 	};
 
@@ -50,16 +50,38 @@ $(function() {
 		var hash = location.hash;
 		if (hash.length) {
 			var tip = $('.tips-heading [href='+hash+']');
-			$('html, body').animate({
-			    scrollTop: tip.offset().top
-			}, 100);
+			if (tip.length) {
+				$('html, body').animate({
+				    scrollTop: tip.offset().top
+				}, 100);
+			}
 		}
+	}
+
+	function initCurrentInfo() {
+		var currentInfo = $('.current-info ul');
+		var panelInfo;
+		var template = "{{#.}}<li><a data-panel='{{.}}' href='#panel-{{.}}'>{{.}}</a></li>{{/.}}";
+		var rendered = Mustache.render(template, panels);
+		currentInfo.append(rendered);
+
+		// TODO: Throttle + Requestanimframe
+		$(window).on('scroll', function() {
+			var panel = $('.tips-tip:in-viewport:last').data('panel');
+			var link = currentInfo.find('[data-panel='+panel+']');
+			var currentPanelClass = 'current-panel';
+			if (!link.hasClass(currentPanelClass)) {
+				currentInfo.find('a').removeClass(currentPanelClass);
+				link.addClass(currentPanelClass);
+			}
+		});
 	}
 
 	function tipsReady(data) {
 		videos = $('video');
 		bindControls();
 		scrollToTip();
+		initCurrentInfo();
 	}
 
 	function group(data) {
