@@ -54,10 +54,19 @@ $(function() {
 
 	function scrollToTip() {
 		var hash = location.hash;
-		if (hash.length) {
-			var tip = $('.tips-heading [href='+hash+']');
+		if (!hash.length) {
+			return;
+		}
+
+		var tip = $('.tips-heading [href='+hash+']');
+		if (tip.length) {
+			animate(tip);
+		} else {
+			tip = $('a[href="' + hash +'"]');
 			if (tip.length) {
-				animate(tip);
+		console.log(tip);
+
+				tip.click();
 			}
 		}
 	}
@@ -78,7 +87,6 @@ $(function() {
 		var currentInfo = $('.current-info ul');
 		var links = currentInfo.find('a');
 		links.on('click', function(e) {
-			e.preventDefault();
 			var panel = $(this).data('panel');
 			var tip = $('.tips-tip[data-panel='+ panel +']:first');
 			if (tip.length) {
@@ -103,8 +111,8 @@ $(function() {
 	function tipsReady(data) {
 		videos = $('video');
 		bindControls();
-		scrollToTip();
 		initCurrentInfo();
+		scrollToTip();
 	}
 
 	function group(data) {
