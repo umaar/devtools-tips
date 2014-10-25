@@ -21,6 +21,10 @@ body {
 	display: none;
 }
 
+.heading h1 {
+	margin: 0;
+}
+
 .settings summary {
 	margin-bottom: 12px;
 	outline: none;
@@ -28,11 +32,24 @@ body {
 }
 
 .current-info {
-	
+
+}
+
+.current-info li {
+	margin: 2px 0;
+}
+
+.current-info a {
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	padding: 2px 5px;
+	display: inline-block;
 }
 
 .current-panel {
-	font-weight: bold;
+	color: white;
+	background: black;
+	text-decoration: none;
 }
 
 .tips {

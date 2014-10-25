@@ -58,6 +58,18 @@ $(function() {
 		}
 	}
 
+	function updateCurrentPanel() {
+		var currentInfo = $('.current-info ul');
+
+		var panel = $('.tips-tip:in-viewport:last').data('panel');
+		var link = currentInfo.find('[data-panel='+panel+']');
+		var currentPanelClass = 'current-panel';
+		if (!link.hasClass(currentPanelClass)) {
+			currentInfo.find('a').removeClass(currentPanelClass);
+			link.addClass(currentPanelClass);
+		}
+	}
+
 	function initCurrentInfo() {
 		var currentInfo = $('.current-info ul');
 		var panelInfo;
@@ -65,16 +77,9 @@ $(function() {
 		var rendered = Mustache.render(template, panels);
 		currentInfo.append(rendered);
 
+		updateCurrentPanel();
 		// TODO: Throttle + Requestanimframe
-		$(window).on('scroll', function() {
-			var panel = $('.tips-tip:in-viewport:last').data('panel');
-			var link = currentInfo.find('[data-panel='+panel+']');
-			var currentPanelClass = 'current-panel';
-			if (!link.hasClass(currentPanelClass)) {
-				currentInfo.find('a').removeClass(currentPanelClass);
-				link.addClass(currentPanelClass);
-			}
-		});
+		$(window).on('scroll', updateCurrentPanel);
 	}
 
 	function tipsReady(data) {
