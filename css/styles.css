@@ -107,6 +107,12 @@ body {
 	width: 80%;
 }
 
+.tips-video::-webkit-media-controls-mute-button,
+.tips-video::-webkit-media-controls-toggle-closed-captions-button,
+.tips-video::-webkit-media-controls-volume-slider {
+	display: none;
+}
+
 @media screen and (max-width: 780px) {
 	body {
 		margin: 1%;

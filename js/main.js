@@ -135,7 +135,7 @@ $(function() {
 
 	function formatData(data) {
 		var keyed = data.map(function(tip) {
-			tip['key'] = tip.src.replace('/', '-').replace('.mp4', '');
+			tip.key = tip.src.replace('/', '-').replace('.mp4', '');
 			return tip;
 		});
 		return group(keyed);
@@ -156,7 +156,7 @@ $(function() {
 	function render(data, template) {
 		var rendered = Mustache.render(template, {data: formatData(data.tips)});
 		$('.tips').append(rendered);
-		$('.heading p').find('span').html(data.metadata.totalSize).end().fadeIn();;
+		$('.heading p').find('span').html(data.metadata.totalSize).end().fadeIn();
 	}
 
 	$.when(getMedia(), getTemplate(), getMetadata()).done(function(data, template, metadata) {
